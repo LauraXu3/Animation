@@ -1,0 +1,80 @@
+@mixin animation($animation,$duration,$repeat,$easing){
+  -webkit-animation: $animation $duration $repeat $easing;
+  -moz-animation: $animation $duration $repeat $easing;
+  -ms-animation: $animation $duration $repeat $easing;
+  animation: $animation $duration $repeat $easing;
+}
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+html {
+  height: 100%;
+}
+//main styles
+body{
+  width: 100%;
+  height: 100%;
+  background: -webkit-linear-gradient(bottom, #09f, #45d1ff);
+}
+
+.bubbles {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.bubble-container {
+  position: absolute;
+  bottom: 0;
+  opacity: 0;
+  @include animation(bubblerise, 4s, infinite, ease-in);
+}
+
+.bubble {
+  width: 6px;
+  height: 6px;
+  margin: 0 auto;
+  border: 1px solid rgba(255,255,255,0.5);
+  background: rgba(255,255,255,0.25);
+  will-change: transform;
+  border-radius: 20px;
+  @include animation(bubblewooble, 1s, infinite, linear);
+}
+
+@include keyframes(bubblerise) {
+  0% {
+    bottom: 0;
+    opacity: 0;
+  }
+  5% {
+    bottom: 0;
+    opacity: 1;
+  }
+  100% {
+    bottom:100%;
+    opacity: 0;
+  }
+}
+
+@include keyframes(bubblewooble) {
+  0% {
+    margin-left:0;
+  }
+  50% {
+    margin-left: 2px;
+  }
+}
