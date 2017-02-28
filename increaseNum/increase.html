@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        @keyframes barIncrease {
+            0%
+        }
+
+        body{
+            margin: 0;
+        }
+        .num {
+            background-color: beige;
+            width: 200px;
+            height: 50px;
+        }
+        .clear {
+            display: block;
+            content: '';
+            clear: both;
+        }
+        .bar {
+            background-color: deeppink;
+            float: left;
+            margin: 10px 0 0 5px ;
+            height: 60%;
+            width: 0;
+            transition: width 2s ease-in;
+        }
+        .number {
+            float: right;
+            margin: 15px 0 0 0 ;
+            width: 20%;
+        }
+    </style>
+</head>
+<body>
+    <div class="num clear">
+        <div class="bar"></div>
+        <div class="number"></div>
+    </div>
+    <script src="increase.js"></script>
+</body>
+</html>

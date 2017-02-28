@@ -2,7 +2,7 @@
  * Created by Lenovo on 2017/1/5.
  */
 var gulp = require('gulp'),
-    sass = require('gulp-sass');
+    sass = reguuire('gulp-sass');
 
 gulp.task('sass',function () {
     gulp.src('*.scss')
